@@ -1,0 +1,43 @@
+# matplotlib
+
+-------------------------------
+インポート
+
+import matplotlib.pyplot as plt
+
+(as・・・以降でmatplotlib.pyplotを使用する際 plt と略すことができる)
+-------------------------------
+グラフの構成要素
+
+https://camo.qiitausercontent.com/09c44e10bff1caba0af9816834dadb6ac67ab90d/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3135373732302f61396662316432382d363433632d656532332d353064372d6634396563326566393966392e706e67
+
+参考サイト
+https://www.datacamp.com/community/tutorials/matplotlib-tutorial-python
+
+・figure: グラフや文字など、全てが描かれるウインドウ(またはページ)を指す。全ての要素の最上位レベルのコンポーネント
+
+・Axes: plot()やscatter()でデータがプロットされる領域を指す
+　tickやlabelなどの要素が関連付けれらている
+　fugureとAxesが別れて定義されているため、一つのfigure上に複数のAxes(グラフ)を表示することができる
+
+-------------------------------
+折れ線
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+for data_y, label in zip(data_ys, labels):
+    ax.plot(data_x, data_y, label=label)
+ax.legend()
+fig.show()
+
+-------------------------------
+散布図
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+for cluster, label, color in zip((cluster1, cluster2, cluster3), labels, 'rbg'):
+    ax.scatter(*cluster, label=label, c=color)
+ax.legend()
+fig.show()
+
+-------------------------------
