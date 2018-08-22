@@ -26,7 +26,6 @@ https://www.datacamp.com/community/tutorials/matplotlib-tutorial-python
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot(data_x, data_y, label=label)
-ax.legend()
 fig.show()
 
 -------------------------------
@@ -35,7 +34,6 @@ fig.show()
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.scatter(*cluster, label=label, c=color)
-ax.legend()
 fig.show()
 
 -------------------------------
@@ -44,13 +42,35 @@ fig.show()
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.hist(rand(100), bins=20, color='k', alpha=0.3)
-ax.legend()
 fig.show()
 
 -------------------------------
 サブプロット間の空白を詰める
 
 plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=0, hspace=0)
+-------------------------------
+タイトル、ラベル付け
+
+ax.set_title("title")       # タイトル
+ax.set_xlabel("X-LABEL")　　# X軸
+ax.set_ylabel("Y-LABEL")    # Y軸
+
+-------------------------------
+凡例（位置づけ）
+
+ax.legend(loc='best')               #ベスト
+ax.legend(loc='lower right')        #右下
+ax.legend(loc='lower left')         #左下
+ax.legend(loc='upper right')        #右上
+ax.legend(loc='upper left')         #左下
+ax.legend(loc='right')              #右
+ax.legend(loc='left')               #左
+ax.legend(loc='center')             #中央
+ax.legend(loc='center right')       #中央右
+ax.legend(loc='center left')        #中央左
+ax.legend(loc='lower right')        #中央下
+ax.legend(loc='upper left')         #中央上
+
 -------------------------------
 表示した図の保存
 
